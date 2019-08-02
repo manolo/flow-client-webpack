@@ -1,34 +1,33 @@
 {
   "compilerOptions": {
-    "module": "amd",
-    "lib": ["dom", "es2015.promise", "es5", "es6"],
-    "target": "es5",
-    "noImplicitAny": true,
     "removeComments": true,
-    "jsx": "react",
-    "jsxFactory": "tsx",
-    "moduleResolution": "node",
     "esModuleInterop": true,
     "isolatedModules": false,
-    "experimentalDecorators": true,
     "declaration": false,
     "noLib": false,
     "preserveConstEnums": true,
     "suppressImplicitAnyIndexErrors": true,
     "strictNullChecks": true,
-
-    "outDir": "./dist/",
+    "inlineSources": true,
+    "module": "esNext",
+    "target": "es2015",
+    "moduleResolution": "node",
+    "strict": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "noUnusedParameters": true,
+    "experimentalDecorators": true,    
     "sourceMap": true,
     "noEmitOnError": false,
     "noUnusedLocals": true,
     "importHelpers": true,
-    "skipLibCheck": true
+    "skipLibCheck": true,
+
+    "outDir": "target/classes/META-INF/resources/frontend",
   },
-  "types": [
-    "arcgis-js-api",
-    "moment"
-  ],
   "include": [
-    "src/**/*"
+    "src/main/resources/META-INF/resources/frontend/**/*"
   ]
 }

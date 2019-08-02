@@ -1,30 +1,27 @@
 const path = require("path");
 
-const ArcGISPlugin = require("@arcgis/webpack-plugin");
-const CleanWebpackPlugin = require("clean-webpack-plugin");
-
 module.exports = {
   entry: {
-    tests: "./tests/unit/request.ts"
+    tests: "./src/test/frontend/FlowTests.ts"
   },
   output: {
     filename: "[name].js",
-    path: path.resolve(__dirname, "./~tmp")
+    path: path.resolve(__dirname, "target/frontend-tests")
   },
 
   resolve: {
     modules: [
-      path.resolve(__dirname, "./src"),
-      path.resolve(__dirname, "./tests"),
+      path.resolve(__dirname, "./src/main/resources/META-INF/frontend"),
+      path.resolve(__dirname, "./src/test/frontend"),
       "node_modules/"
     ],
-    extensions: [".ts", ".tsx", ".js", ".css", ".scss"]
+    extensions: [".ts", ".js"]
   },
 
   module: {
     rules: [
       {
-        test: /\.tsx?$/,
+        test: /\.ts$/,
         use: [
           {
             loader: "ts-loader",
@@ -36,8 +33,6 @@ module.exports = {
       }
     ]
   },
-
-  plugins: [new CleanWebpackPlugin(), new ArcGISPlugin()],
 
   node: {
     process: false,
